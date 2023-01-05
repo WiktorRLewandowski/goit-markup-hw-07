@@ -1,0 +1,57 @@
+/* newsletter styling */
+
+.newsletter {
+  margin: 12px 0 0 78px;
+  width: 100%;
+}
+
+.newsletter__label-header {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.newsletter__flex {
+  display: flex;
+
+  width: 100%;
+}
+
+.newsletter__input {
+  background-color: var(--header-footer-bg-clr);
+  color: var(--secondary-address-font-clr);
+  flex-grow: 2;
+
+  margin-right: 10px;
+  padding: 15px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+
+.newsletter__input:autofill,
+.newsletter__input:-webkit-autofill,
+.newsletter__input:-internal-autofill-selected {
+  background-color: inherit !important;
+  color: inherit !important;
+}
+
+.newsletter__button {
+  display: flex;
+  
+  align-items: center;
+
+  color: var(--primary-address-font-clr);
+
+  background: #2196F3;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+  border: none;
+  border-radius: 4px;
+
+  padding: 10px 24px 10px 42px;
+}
+
+.newsletter__icon {
+  margin-left: 24px;
+}

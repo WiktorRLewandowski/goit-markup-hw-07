@@ -1,0 +1,56 @@
+:root {
+  --brand-clr: #2196f3;
+  --logo-accent-clr: #000000;
+
+  --main-font-clr: #212121;
+  --secondary-font-clr: #757575;
+
+  --primary-address-font-clr: #ffffff;
+  --secondary-address-font-clr: #ffffff99;
+
+  --button-font-clr: var(--primary-address-font-clr);
+
+  --header-footer-bg-clr: #2f303a;
+
+  --header-banner-font-clr: #ffffff;
+
+  --primary-bg-clr: #e5e5e5;
+  --section-bg-clr: #ffffff;
+
+  --secondary-section-bg-clr: #f5f4fa;
+
+  --nav-bar-bg-clr: var(--primary-address-font-clr);
+  --portfolio-bg-clr: var(--primary-address-font-clr);
+  --porftolio-btn-inactive: #f5f4fa;
+
+  --portfolio-fig-border: #eeeeee;
+  --potfolio-overlay-clr: var(--primary-address-font-clr);
+  --portfolio-overlay-bg: #2196F3E5;
+
+  --footer-socials-bg: #FFFFFF1A;
+  --aoe-label-bg: #2F303ACC;
+
+  --icon-primary-clr: #AFB1B8;
+  --icon-secondary-clr: var(--primary-address-font-clr);
+
+  --ff-primary: "Roboto", sans-serif;
+  --ff-logo: "Raleway", sans-serif;
+
+  --fs-primary: 1rem;
+  --fs-button: 1rem;
+  --fs-logo: 1.625rem;
+  --fs-page-heading: 2.75rem;
+  --fs-section-heading: 2.25rem;
+  --fs-modal-heading: 1.25rem;
+  --fs-modal-items: .75rem;
+  --fs-modal-checkbox-label: .875rem;
+  --fs-item-heading: .875rem;
+  --fs-nav-bar: .875rem;
+  --fs-footer-address: .875rem;
+  --fs-portfolio-projects: 1.125rem;
+  --fs-portfolio-overlay: 1.125rem;
+
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 700;
+}
