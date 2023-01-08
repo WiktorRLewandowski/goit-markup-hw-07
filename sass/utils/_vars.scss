@@ -1,56 +1,49 @@
-:root {
-  --brand-clr: #2196f3;
-  --logo-accent-clr: #000000;
+  $brandColor: #2196f3;
 
-  --main-font-clr: #212121;
-  --secondary-font-clr: #757575;
+  $fontClr100: #212121;
+  $fontClr200: #757575;
+  $fontClr300: #ffffff;
+  $fontClr400: #ffffff99;
+  $fontClr500: #000000;
 
-  --primary-address-font-clr: #ffffff;
-  --secondary-address-font-clr: #ffffff99;
+  $bgClr100: #e5e5e5;
+  $bgClr200: #ffffff;
+  $bgClr300: #f5f4fa;
+  $bgClr400: #2f303a;
+  $bgClr500: #ffffff1a;
 
-  --button-font-clr: var(--primary-address-font-clr);
+  $accentClr100: #2f303acc;
+  $accentClr200: #eeeeee;
+  $accentClr300: #2196f3e5;
 
-  --header-footer-bg-clr: #2f303a;
+  $iconClr100: #afb1b8;
+  $iconClr200: #ffffff;
 
-  --header-banner-font-clr: #ffffff;
+  $ffPrimary: "Roboto", sans-serif;
+  $ffLogo: "Raleway", sans-serif;
 
-  --primary-bg-clr: #e5e5e5;
-  --section-bg-clr: #ffffff;
+  $fsPrimary: 1rem;
+  $fsButton: 1rem;
 
-  --secondary-section-bg-clr: #f5f4fa;
+  $fsLogo: 1.625rem;
 
-  --nav-bar-bg-clr: var(--primary-address-font-clr);
-  --portfolio-bg-clr: var(--primary-address-font-clr);
-  --porftolio-btn-inactive: #f5f4fa;
+  $fsPageHeading: 2.75rem;
+  $fsSectionHeading: 2.25rem;
 
-  --portfolio-fig-border: #eeeeee;
-  --potfolio-overlay-clr: var(--primary-address-font-clr);
-  --portfolio-overlay-bg: #2196F3E5;
+  $fsModalHeading: 1.25rem;
 
-  --footer-socials-bg: #FFFFFF1A;
-  --aoe-label-bg: #2F303ACC;
+  $fsModalItems: 0.75rem; 
 
-  --icon-primary-clr: #AFB1B8;
-  --icon-secondary-clr: var(--primary-address-font-clr);
+  $fsModalCheckbox-label: 0.875rem;
+  $fsItemHeading: 0.875rem;
+  $fsItemText: 0.875rem;
+  $fsNavBar: 0.875rem;
+  $fsFooterAddress: 0.875rem;
 
-  --ff-primary: "Roboto", sans-serif;
-  --ff-logo: "Raleway", sans-serif;
+  $fsPortfolioProjects: 1.125rem;
+  $fsPortfolioOverlay: 1.125rem;
 
-  --fs-primary: 1rem;
-  --fs-button: 1rem;
-  --fs-logo: 1.625rem;
-  --fs-page-heading: 2.75rem;
-  --fs-section-heading: 2.25rem;
-  --fs-modal-heading: 1.25rem;
-  --fs-modal-items: .75rem;
-  --fs-modal-checkbox-label: .875rem;
-  --fs-item-heading: .875rem;
-  --fs-nav-bar: .875rem;
-  --fs-footer-address: .875rem;
-  --fs-portfolio-projects: 1.125rem;
-  --fs-portfolio-overlay: 1.125rem;
-
-  --fw-regular: 400;
-  --fw-semi-bold: 500;
-  --fw-bold: 700;
-}
+  $fwRegular: 400;
+  $fwSemiBold: 500;
+  $fwBold: 700;
+  $fwSuperBold: 900;

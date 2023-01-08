@@ -3,30 +3,34 @@
 .newsletter {
   margin: 12px 0 0 78px;
   width: 100%;
-}
 
-.newsletter__label-header {
-  display: block;
-  margin-bottom: 20px;
-}
+  &__label-header {
+    display: block;
+    margin-bottom: 20px;
+    @include itemHeading($fontClr300);
+  }
 
-.newsletter__flex {
-  display: flex;
+  &__flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
-  width: 100%;
-}
+    width: 100%;
+  }
 
-.newsletter__input {
-  background-color: var(--header-footer-bg-clr);
-  color: var(--secondary-address-font-clr);
-  flex-grow: 2;
+  &__input {
+    background-color: $bgClr400;
+    color: $fontClr400;
+    flex-grow: 2;
 
-  margin-right: 10px;
-  padding: 15px 16px;
+    // margin-bottom: 10px;
+    margin-right: 10px;
+    padding: 15px 16px;
 
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
-  border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+  }
 }
 
 .newsletter__input:autofill,
@@ -38,18 +42,23 @@
 
 .newsletter__button {
   display: flex;
-  
+
   align-items: center;
 
-  color: var(--primary-address-font-clr);
+  color: $fontClr300;
 
-  background: #2196F3;
+  background: $brandColor;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
   border: none;
   border-radius: 4px;
 
   padding: 10px 24px 10px 42px;
+  @include transition(filter);
+  &:hover {
+    filter: drop-shadow(0px 0px 2px $brandColor);
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); */
+  }
 }
 
 .newsletter__icon {

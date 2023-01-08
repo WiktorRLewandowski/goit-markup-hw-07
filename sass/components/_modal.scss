@@ -3,16 +3,17 @@
   visibility: hidden;
   opacity: 0;
 
-  transition: visibility, opacity, 2000ms ease-in;
+  transition: visibility, opacity 2000ms ease-in;
   transition-delay: 250ms;
+  .modal {
+    opacity: 0;
+  }
 }
 
-.is-hidden .modal {
-  opacity: 0;
-}
-
-.is-hidden .modal__window {
-  transform: scaleY(0);
+.is-hidden {
+  .modal__window {
+    transform: scaleY(0);
+  }
 }
 
 .modal {
@@ -31,29 +32,75 @@
   background-image: linear-gradient(#00000033, #00000033);
 
   /* visibility: visible; */
-  transition: visibility, opacity, 500ms;
+  transition: visibility, opacity 500ms;
 
   opacity: 1;
-}
+  &__window {
+    position: relative;
 
-.modal__window {
-  position: relative;
+    background-color: $bgClr200;
+    z-index: 3;
 
-  background-color: var(--section-bg-clr);
-  z-index: 3;
+    border: none;
+    border-radius: 4px;
 
-  border: none;
-  border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2);
 
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+    // transition: transform 250ms ease-out;
+    @include transition(transform);
+    transition-delay: 100ms;
+    transform: scaleY(1);
+    opacity: 1;
 
-  transition: transform 250ms ease-out;
-  transition-delay: 100ms;
-  transform: scaleY(1);
-  opacity: 1;
+    padding: 40px;
+  }
+  &__heading {
+    font-size: $fsModalHeading;
+  }
 
-  padding: 40px;
+  &__text {
+    font-size: $fsModalItems;
+    color: $fontClr200;
+    letter-spacing: 0.01em;
+  }
+
+  &__label--checkbox {
+    font-size: $fsModalCheckbox-label;
+    line-height: 1.71;
+  }
+
+  &__terms {
+    color: $brandColor;
+  }
+
+  &__header {
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  &__form {
+    display: flex;
+    flex-flow: column;
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 4px;
+  }
+  &__input {
+    padding: 12px 42px;
+    width: 100%;
+  }
+  &__textarea {
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    width: 100%;
+
+    resize: none;
+    overflow-y: auto;
+  }
 }
 
 .modal__btn-close {
@@ -62,8 +109,8 @@
   align-items: center;
   justify-content: center;
 
-  top: 8px;
-  right: 8px;
+  top: 0.5rem;
+  right: 0.5rem;
 
   text-align: center;
   background-color: inherit;
@@ -73,56 +120,24 @@
 
   padding: 5px;
 
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal__btn-close:hover {
-  fill: var(--brand-clr);
-  transform: rotate(-360deg);
-}
-
-.modal__header {
-  font-size: 20px;
-  text-align: center;
-  margin-bottom: 12px;
-}
-
-.modal__form {
-  display: flex;
-  flex-flow: column;
-}
-
-.modal__label {
-  display: block;
-  margin-bottom: 4px;
-}
-
-.modal__input,
-.modal__textarea,
-.modal__label {
-  color: var(--secondary-font-clr);
-  font-size: 12px;
-  letter-spacing: 0.01em;
+  // transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  @include transition(transform);
+  &:hover {
+    fill: $brandColor;
+    transform: rotate(-360deg);
+  }
 }
 
 .modal__input,
 .modal__textarea {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-}
-
-.modal__textarea {
-  padding: 12px 16px;
-  margin-bottom: 20px;
-  width: 100%;
-
-  resize: none;
-  overflow-y: auto;
-}
-
-.modal__input {
-  padding: 12px 42px;
-  width: 100%;
+  &:focus {
+    fill: $brandColor;
+    stroke: none;
+    border-color: $brandColor;
+    transition: fill, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 }
 
 .modal__icon-positioner {
@@ -141,23 +156,10 @@
   transform: translateY(-50%);
 }
 
-.modal__input:focus,
-.modal__textarea:focus {
-  fill: var(--brand-clr);
-  stroke: none;
-  border-color: var(--brand-clr);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .modal__input:focus + .modal__icon {
-  color: var(--brand-clr);
-  fill: var(--brand-clr);
+  color: $brandColor;
+  fill: $brandColor;
 
-  animation-name: formAnimation;
-  animation-duration: 250ms;
-}
-
-.modal__textarea:focus::placeholder {
   animation-name: formAnimation;
   animation-duration: 250ms;
 }
@@ -181,19 +183,19 @@
   -webkit-appearance: none;
   appearance: none;
   margin-right: 0.5rem;
-}
+  &::before {
+    content: "";
+    width: 16px;
+    height: 15px;
 
-.modal__checkbox::before {
-  content: "";
-  width: 16px;
-  height: 15px;
+    display: block;
+    border: 1.75px solid $fontClr100;
+    border-radius: 2px;
 
-  display: block;
-  border: 1.75px solid var(--main-font-clr);
-  border-radius: 2px;
+    transition: opacity, transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  transition: opacity, transform, 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transform: scale(1);
+    transform: scale(1);
+  }
 }
 
 .modal__custom-check {
@@ -212,6 +214,7 @@
   transform: scale(1.5);
 }
 
+// potworek, ale tylko tak działa
 .modal__checkbox:checked + .modal__label--checkbox .modal__custom-check {
   opacity: 1;
   transform: translate(0, -50%) scale(1);
@@ -228,23 +231,13 @@
   margin-inline: 14px;
 }
 
-.modal__label--checkbox {
-  color: var(--secondary-font-clr);
-  font-size: 14px;
-  line-height: 1.71;
-}
-
-.modal__terms {
-  color: var(--brand-clr);
-}
-
 .modal__btn-submit {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  color: var(--button-font-clr);
-  background-color: var(--brand-clr);
+  color: $fontClr300;
+  background-color: $brandColor;
   border: none;
   border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -253,4 +246,9 @@
   padding: 10px 76px;
 
   cursor: pointer;
+  @include transition(filter);
+  &:hover {
+    filter: drop-shadow(0px 0px 2px $brandColor);
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); */
+  }
 }

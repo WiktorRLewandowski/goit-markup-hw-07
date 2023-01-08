@@ -1,44 +1,32 @@
-/* area of expertise */
-.aoe__heading {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.16;
-  text-align: center;
-  margin-bottom: 50px;
-}
+.aoe {
+  &__heading {
+    @include sectionHeading();
+  }
 
-.aoe__list {
-  display: flex;
-  flex-wrap: wrap;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
 
-  gap: 30px;
-  justify-content: center;
-}
+    gap: 30px;
+    justify-content: center;
+  }
 
-.aoe__item {
-  position: relative;
-  /* overflow: hidden; */
-}
+  &__item {
+    position: relative;
+    // overflow: hidden;
+  }
 
-.aoe__img {
-  display: block;
-}
+  &__label {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 
-.aoe__label {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+    text-align: center;
+    padding: 27px 0;
 
-  text-align: center;
-  padding: 27px 0;
+    background-color: $accentClr100;
+    color: $fontClr300;
 
-  background-color: var(--aoe-label-bg);
-  color: var(--header-banner-font-clr);
-}
-
-.aoe__label {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.1428;
-  text-transform: uppercase;
+    @include itemHeading($fontClr300);
+  }
 }

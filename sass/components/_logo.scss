@@ -3,27 +3,15 @@
 .logo {
   display: inline-block;
   user-select: none;
-}
 
-.nav-bar .logo,
-.logo {
-  color: var(--brand-clr);
-  font-family: var(--ff-logo);
+   $ffLogo: "Raleway", sans-serif;
+  color: $brandColor;
+  font-family: $ffLogo;
   font-weight: 700;
   font-size: 1.625rem;
   line-height: 1.1923;
   margin: 0;
 }
 
-.logo-accent {
-  color: var(--logo-accent-clr);
-}
 
-.footer__logo--accent {
-  color: var(--primary-address-font-clr);
-  margin-bottom: 20px;
-}
 
-.footer .logo {
-  margin-bottom: 20px;
-}

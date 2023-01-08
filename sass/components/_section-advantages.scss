@@ -1,38 +1,30 @@
-.advantages__heading {
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.1428;
+.advantages {
+  &__heading {
+    @include itemHeading($fontClr300);
+  }
 
-  text-transform: uppercase;
+  &__text {
+    color: $fontClr200;
+    font-size: $fsItemText;
+    line-height: 1.71;
+  }
 
-  margin-bottom: 9px;
-}
+  &__icon {
+    background-color: $bgClr200;
+    border-radius: 4px;
 
-.advantages__heading {
-  margin-bottom: 9px;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.advantages__text {
-  color: var(--secondary-font-clr);
-  font-size: 14px;
-  line-height: 1.71;
-}
+    margin-bottom: 30px;
+    padding: 25px 100px;
+  }
 
-.advantages__icon {
-  background-color: var(--secondary-section-bg-clr);
-  border-radius: 4px;
+  &__list {
+    display: flex;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-bottom: 30px;
-  padding: 25px 100px;
-}
-
-.advantages__list {
-  display: flex;
-
-  gap: 30px;
-  justify-content: center;
+    gap: 30px;
+    justify-content: center;
+  }
 }
